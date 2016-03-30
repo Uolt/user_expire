@@ -50,8 +50,8 @@ class UserExpireTest extends WebTestBase {
     $this->assertRaw('type="radio" id="edit-status-1" name="status" value="1" checked="checked" class="form-radio"', t('User account is currently enabled.'));
 
     // And the expiration was really really saved.
-//    $this->assertRaw('expiration date is set to Sun, 08/18/2002 - 00:00.');
-    $this->assertRaw($basic_account->getAccountName() . '\'s expiration date is set to Sun, 08/18/2002 - 00:00.');
+    $this->assertRaw('expiration date is set to Sun, 08/18/2002 - 00:00.');
+//    $this->assertRaw($basic_account->getAccountName() . '\'s expiration date is set to Sun, 08/18/2002 - 00:00.');
     $this->drupalGet('admin/reports/expiring-users');
     $this->assertRaw('0 sec from now', 'Expiration shows in Expiring users report');
     $this->drupalLogout($admin_user);

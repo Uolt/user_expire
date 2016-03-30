@@ -14,6 +14,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class UserExpireReport extends ControllerBase {
 
+  /**
+   * The database service.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
   protected $database;
 
   /**
@@ -24,10 +29,13 @@ class UserExpireReport extends ControllerBase {
   protected $dateFormatter;
 
   /**
-   * Constructs a \Drupal\aggregator\Controller\AggregatorController object.
+   * Constructs a \Drupal\user_expire\Controller object.
    *
    * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
    *    The date formatter service.
+   *
+   * @param \Drupal\Core\Database\Connection $database
+   *    The database service.
    */
   public function __construct(DateFormatterInterface $date_formatter, Connection $database) {
     $this->dateFormatter = $date_formatter;

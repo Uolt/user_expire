@@ -8,6 +8,7 @@ namespace Drupal\user_expire\Form;
 
 
 use Drupal\user\Entity\Role;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -17,13 +18,18 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class UserExpireSettingsForm extends FormBase {
 
+  /**
+   * The database service.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
   protected $database;
 
   /**
-   * Constructs a \Drupal\aggregator\Controller\AggregatorController object.
+   * Constructs a \Drupal\user_expire\Form\UserExpireSettingsForm object.
    *
-   * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
-   *    The date formatter service.
+   * @param \Drupal\Core\Database\Connection $database
+   *    The database service.
    */
   public function __construct(Connection $database) {
     $this->database = $database;
