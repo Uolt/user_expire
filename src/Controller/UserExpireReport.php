@@ -92,7 +92,7 @@ class UserExpireReport extends ControllerBase {
     foreach ($accounts as $account) {
       $username = array(
         '#theme' => 'username',
-        '#account' => $this->entityTypeManager->getStorage('user')->load($account->uid),
+        '#account' => $this->entityTypeManager()->getStorage('user')->load($account->uid),
       );
 
       $rows[$account->uid] = array(

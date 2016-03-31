@@ -11,7 +11,7 @@ function user_expire_views_data() {
   $data['user_expire']['table']['group'] = t('User');
 
   $data['user_expire']['table']['join'] = array(
-    'users' => array(
+    'users_field_data' => array(
       'left_field' => 'uid',
       'field' => 'uid',
     ),
@@ -21,14 +21,13 @@ function user_expire_views_data() {
     'title' => t('Expiration date'),
     'help' => t('The date on which this account will be disabled.'),
     'field' => array(
-      'handler' => 'views_handler_field_date',
-      'click sortable' => TRUE,
-    ),
-    'sort' => array(
-      'handler' => 'views_handler_sort_date',
+      'id' => 'date',
     ),
     'filter' => array(
-      'handler' => 'views_handler_filter_date',
+      'id' => 'date',
+    ),
+    'sort' => array(
+      'id' => 'date',
     ),
   );
 
