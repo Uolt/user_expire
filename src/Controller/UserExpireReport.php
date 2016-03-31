@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains \Drupal\user_expire\Controller\UserExpireReport.
@@ -12,6 +13,9 @@ use Drupal\Core\Database\Connection;
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Report controller of User Expire module.
+ */
 class UserExpireReport extends ControllerBase {
 
   /**

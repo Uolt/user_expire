@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains \Drupal\user_expire\Form\UserExpireSettingsForm.
