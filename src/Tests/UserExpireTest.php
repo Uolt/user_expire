@@ -12,7 +12,6 @@ use Drupal\Core\Database\Database;
 use Drupal\simpletest\WebTestBase;
 use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
-//use Drupal\Core\DateTime\DrupalDateTime;
 
 /**
  * Tests for User expire module.
@@ -51,7 +50,6 @@ class UserExpireTest extends WebTestBase {
 
     // And the expiration was really really saved.
     $this->assertRaw('expiration date is set to Sun, 08/18/2002 - 00:00.');
-//    $this->assertRaw($basic_account->getAccountName() . '\'s expiration date is set to Sun, 08/18/2002 - 00:00.');
     $this->drupalGet('admin/reports/expiring-users');
     $this->assertRaw('0 sec from now', 'Expiration shows in Expiring users report');
     $this->drupalLogout($admin_user);

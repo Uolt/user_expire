@@ -431,7 +431,7 @@ function user_expire_mail($key, &$message, $params) {
     $message['body'][] = t('Because you have not logged in recently, your account at @site_name will be blocked in the near future. If you still use this site, please log in @login_url to avoid having your account blocked.',
       array(
         '@site_name' => $site_name,
-        '@login_url' => Url::fromRoute('entity.user.canonical', ['user' => \Drupal::currentUser()->id()], $absolute = TRUE),
+        '@login_url' => Url::fromRoute('entity.user.canonical', ['user' => \Drupal::currentUser()->id()], ['absolute' => TRUE]),
       )
     );
     $message['body'][] = '';
