@@ -19,8 +19,17 @@ use Drupal\user\RoleInterface;
  * @group user_expire
  */
 class UserExpireTest extends WebTestBase {
+
+  /**
+   * Modules to install.
+   *
+   * @var array
+   */
   public static $modules = array('user_expire');
 
+  /**
+   * Tests user expiration functionality.
+   */
   function testUserExpire() {
     $connection = Database::getConnection();
     $basic_account = $this->drupalCreateUser();

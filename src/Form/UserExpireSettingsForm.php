@@ -13,6 +13,7 @@ use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\user\RoleInterface;
 
 /**
  * User expire admin settings form.
@@ -79,7 +80,7 @@ class UserExpireSettingsForm extends FormBase {
     );
 
     foreach ($roles as $rid => $role) {
-      if ($rid === 'anonymous') {
+      if ($rid === RoleInterface::ANONYMOUS_ID) {
         continue;
       }
 
@@ -105,7 +106,7 @@ class UserExpireSettingsForm extends FormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     foreach ($form_state->getValue('current_roles') as $rid => $role) {
-      if ($rid === 'anonymous') {
+      if ($rid === RoleInterface::ANONYMOUS_ID) {
         continue;
       }
 

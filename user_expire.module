@@ -5,6 +5,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Database\Query\Condition;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\user\RoleInterface;
